@@ -1,0 +1,36 @@
+* { 
+margin:0;
+padding:0; }
+
+#slideshow-container { 
+position:relative;
+float:left;
+width:800px;
+height:700px;
+overflow:hidden; }
+
+#slideshow-container li { 
+position:absolute;
+top:0;
+left:0;
+display:none; }
+
+#slideshow-container > .ativo { display:block;}
+
+#slideshow-nav { 
+float:left;
+list-style:none; }
+
+#slideshow-nav a { 
+display:block;
+padding:20px;
+font-family:Arial, sans-serif;
+font-size:20px;
+font-weight:bold;
+text-decoration:none;
+background:#000;
+color:#fff; }
+
+#slideshow-nav .ativo { 
+background:#fff;
+color:#000; }
