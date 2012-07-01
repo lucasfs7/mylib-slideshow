@@ -7,7 +7,7 @@ A simple slideshow plugin for MyLib js library.
 you must have mylib.js and mylib-slideshow linked to your HTML document
 	<pre><code>
 	&lt;script type="text/javascript" src="mylib.js"&gt;&lt;/script&gt;
-	&lt;script type="text/javascript" src="mylib-slideshow"&gt;&lt;/script&gt;
+	&lt;script type="text/javascript" src="mylib-slideshow.js"&gt;&lt;/script&gt;
 	</code></pre>
 	
 call myLibSlideshow function passing the parameters you want using elements ids:
