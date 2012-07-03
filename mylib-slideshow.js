@@ -13,7 +13,8 @@ var myLibSlideshow;
          *      slideshowWaitingDuration: [the waiting between 1 item and the nex item - OPTIONAL],
          *      slideshowStartOn: [int - the position of the active item - OPTIONAL],
          *      slideshowNavContainer: [html obj or element id - OPTIONAL],
-         *      slideshowNavList:[html obj colection or tag name of items elements - REQUIRED if the slideshowNavContainer is set] 
+         *      slideshowNavList:[html obj colection or tag name of items elements - REQUIRED if the slideshowNavContainer is set],
+         *      slideshowAutoStart: [true or false to auto start de slideshow]
          * } */
 
         //verifica se veio um object ou uma string e instancia o elemento
@@ -80,7 +81,13 @@ var myLibSlideshow;
         var transitionInterval;
         var currentItem = null;
         var navContainer = null;
+        var autoStart = true;
         var navList;
+
+        if(opt.slideshowAutoStart)
+        {
+            autoStart = opt.slideshowAutoStart;
+        }
 
         if(opt.slideshowNavContainer && opt.slideshowNavList)
         {
@@ -153,16 +160,25 @@ var myLibSlideshow;
                     API.attachListener(navList[i], "click", function(e)
                     {
                         API.cancelDefault(e);
-                        clearInterval(transitionInterval);
+                        if(transitionInterval)
+                        {
+                            clearInterval(transitionInterval);
+                        }
                         API.removeClass(navList[currentItem], "ativo");
                         changeItem(i);
                         API.addClass(navList[i], "ativo");
-                        transitionInterval = setInterval(startAutoChange, waitingDuration);
+                        if(autoStart)
+                        {
+                            transitionInterval = setInterval(startAutoChange, waitingDuration);
+                        }
                     });
                 })(i);
             }
         }
 
-        transitionInterval = setInterval(startAutoChange, waitingDuration);
+        if(autoStart)
+        {
+            transitionInterval = setInterval(startAutoChange, waitingDuration);
+        }
     };
 })();

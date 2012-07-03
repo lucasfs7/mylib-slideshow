@@ -54,6 +54,7 @@ you can setup many other options to configure the plugin:
          slideshowWaitingDuration: [the waiting between 1 item and the nex item - OPTIONAL],
          slideshowStartOn: [int - the position of the active item - OPTIONAL],
          slideshowNavContainer: [html obj or element id - OPTIONAL],
-         slideshowNavList:[html obj colection or tag name of items elements - REQUIRED if the slideshowNavContainer is set]
+         slideshowNavList:[html obj colection or tag name of items elements - REQUIRED if the slideshowNavContainer is set],
+         slideshowAutoStart: [true or false to auto start de slideshow]
     };
 	</code></pre>
